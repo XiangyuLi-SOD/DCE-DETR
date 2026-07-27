@@ -1,0 +1,38 @@
+backbone:
+  # [from, module, args]
+  - [-1, ConvNormLayer_fuse, [16, 3, 2]] # 0-P1/2
+  - [-1, ConvNormLayer_fuse, [32, 3, 2]] # 1-P2/4
+  - [-1, DMSMoE, [64, 1]] # 2-P2/4
+  - [-1, ConvNormLayer_fuse, [64, 3, 2]] # 3-P3/8
+  - [-1, DMSMoE, [128, 2]] # 4-P3/8
+  - [-1, ConvNormLayer_fuse, [256, 3, 2]] # 5-P4/16
+  - [-1, DMSMoE, [256,2]] # 6-P4/16
+#  - [-1, ConvNormLayer_fuse, [512, 3, 2]] # 7-P5/32
+#  - [-1, MANet, [512, {'module':InceptionDWBlock, 'param':{'mlp_ratio': 4.0}}, 2]] # 8-P5/32
+
+encoder:
+  - [2, ConvNormLayer_fuse, [128, 1, 1]] # 7-P2/4
+  - [4, ConvNormLayer_fuse, [128, 1, 1]] # 8-P3/8
+  - [6, ConvNormLayer_fuse, [256, 1, 1]] # 9-P4/16
+
+  - [-1, TransformerEncoderBlock, [8, 1024, 0.1, "relu", 10000, False]] # 10-P4/16
+
+  - [[10, 8, 7], MSGA, [[3, 5, 7, 9]]] # 11-P4/16
+  - [-1, ConvNormLayer_fuse, [128, 3, 2]] # 12-P5/32
+  - [11, nn.Upsample, [None, 2, "nearest"]] # 13-P3/8
+
+  - [[12, 10], Concat, []] # 14-P5/32
+  - [-1, RepNCSPELAN4, [128, 256, 21, 2, False, 'silu']] # 15-P5/32
+
+  - [[13, 7], Concat, []] # 16-P3/8
+  - [-1, RepNCSPELAN4, [128, 256, 21, 2, False, 'silu']] # 17-P3/8
+
+  - [[15, 11, 17], MSGA, [[3, 5, 7, 9]]] # 18-P4/16
+  - [-1, ConvNormLayer_fuse, [256, 3, 2]] # 19-P5/32
+  - [18, nn.Upsample, [None, 2, "nearest"]] # 20-P3/8
+
+  - [[19, 15], Concat, []] # 21-P5/32
+  - [-1, RepNCSPELAN4, [256, 512, 64, 1, False, 'silu']] # 22-P5/32
+
+decoder:
+  - [[18, 22], DFINETransformer, {"feat_strides":[8, 16], "hidden_dim": 256, "num_levels": 2, "num_layers": 3, "num_points": [6, 6], "dim_feedforward": 1024}]
