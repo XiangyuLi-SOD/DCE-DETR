@@ -1,6 +1,6 @@
 __include__: [
   'dfine_hgnetv2_x_mg.yml',
-  '../dataset/custom_detection.yml',
+  '/home/lxy/LXY/DCE-DETR/configs/dataset/visdrone_detection.yml',
   '../base/deim.yml'
 ]
 

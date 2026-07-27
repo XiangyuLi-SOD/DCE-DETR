@@ -1,5 +1,5 @@
 __include__: [
-  'E:\A_LXY\A_LXY\DEIM\configs\dataset\visdrone_detection.yml',
+  '/home/lxy/LXY/DCE-DETR/configs/dataset/visdrone_detection.yml',
   '../runtime.yml',
   '../base/dataloader_dfine.yml',
   '../base/optimizer.yml',

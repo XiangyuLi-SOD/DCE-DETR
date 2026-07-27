@@ -6,16 +6,14 @@ __include__: [
   '../base/dfine_hgnetv2.yml',
 ]
 
-#  '/home/lxy/LXY/DEIM/configs/dataset/coco_detection.yml',
+
 #  '/home/lxy/LXY/DEIM/configs/dataset/simd_detection.yml',
 #  '/home/lxy/LXY/DEIM/configs/dataset/hazydet_detection.yml',
-# '/home/lxy/LXY/DEIM/configs/dataset/aitod_detection.yml',
 # '/home/lxy/LXY/DEIM/configs/dataset/visdrone_detection.yml',
 # '/home/lxy/LXY/DEIM/configs/dataset/uavdt_detection.yml',
 
-# python train.py -c configs/yaml/dfine_s_hyperACE.yml --test-only -r outputs/dfine-s-hyperACE/best_stg2.pth   50.3（用这个）
 
-output_dir: ./outputs/2-MOEMANet-FocusBIEBlock
+output_dir: ./outputs/DCE-DETR
 
 print_freq: 1600
 checkpoint_freq: 22
