@@ -8,9 +8,6 @@
 [![Ubuntu](https://img.shields.io/badge/Ubuntu-24.04-E95420?logo=ubuntu&logoColor=white)](https://ubuntu.com/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-<p align="center">
-  <strong>Official Implementation</strong> 🚀
-</p>
 
 </div>
 
