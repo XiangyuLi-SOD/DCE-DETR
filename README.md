@@ -7,7 +7,7 @@
 ### Setup
 
 ```shell
-conda create -n dce-detr python=3.11.9
-conda activate dce-detr
+conda create -n dcedetr python=3.11.9
+conda activate dcedetr
 pip install -r requirements.txt
 ```
