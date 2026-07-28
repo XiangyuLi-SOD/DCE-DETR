@@ -39,9 +39,3 @@ pip install -r requirements.txt
 
 ---
 
-
-
-
-<div align="center">
-  <p>Made with ❤️ for UAV Small Object Detection</p>
-</div>
