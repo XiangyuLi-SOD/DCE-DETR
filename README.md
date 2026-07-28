@@ -11,18 +11,6 @@
 
 </div>
 
----
-
-## 📋 Environment
-
-| Component | Version |
-|:----------|:--------|
-| **OS** | Ubuntu 24.04 LTS |
-| **CUDA** | 12.8 |
-| **Python** | 3.11.9 |
-| **PyTorch** | 2.9.1 |
-
----
 
 ## ⚙️ Setup
 
