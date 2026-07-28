@@ -23,4 +23,4 @@ pip install -r requirements.txt
 
 ---
 
-> ⚠️ This repository is temporarily arranged. We will further update the complete code and documents after the paper is accepted.
+⚠️ This repository is temporarily arranged. We will further update the complete code and documents after the paper is accepted.
