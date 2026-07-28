@@ -29,69 +29,18 @@
 
 ## ⚙️ Setup
 
-### 1. Create Conda Environment
+### Create Conda Environment
 
 ```bash
 conda create -n dce-detr python=3.11.9 -y
 conda activate dce-detr
-```
-
-### 2. Install Dependencies
-
-```bash
 pip install -r requirements.txt
 ```
 
-> 💡 **Tip:** Ensure your CUDA driver is compatible with CUDA 12.8 before installing PyTorch. You can verify with:
-> ```bash
-> nvidia-smi
-> ```
-
 ---
 
-## 📂 Project Structure
 
-```
-DCE-DETR/
-├── configs/           # Model configurations
-├── datasets/          # Dataset loading & preprocessing
-├── models/            # DCE-DETR architecture
-├── utils/             # Helper utilities
-├── tools/             # Training & evaluation scripts
-├── requirements.txt   # Python dependencies
-└── README.md          # This file
-```
 
----
-
-## 🚀 Quick Start
-
-```bash
-# Activate environment
-conda activate dce-detr
-
-# Training
-python tools/train.py --config configs/dce_detr_r50.yaml
-
-# Evaluation
-python tools/eval.py --config configs/dce_detr_r50.yaml --weights checkpoints/best.pth
-```
-
----
-
-## 📖 Citation
-
-If you find this work helpful, please consider citing:
-
-```bibtex
-@article{dce-detr2026,
-  title={DCE-DETR: Dynamic Multi-Scale Mixture-of-Experts with Cross-Scale Feature Enhancement for UAV Small Object Detection},
-  journal={},
-  year={2026}
-}
-```
-
----
 
 <div align="center">
   <p>Made with ❤️ for UAV Small Object Detection</p>
