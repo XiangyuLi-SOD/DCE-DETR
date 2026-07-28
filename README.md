@@ -12,9 +12,8 @@
 </div>
 
 
-## ⚙️ Setup
 
-### Create Conda Environment
+### Create Environment
 
 ```bash
 conda create -n dce-detr python=3.11.9 -y
