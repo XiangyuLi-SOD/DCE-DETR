@@ -13,7 +13,7 @@
 
 
 
-### Create Environment
+### Environment Installation
 
 ```bash
 conda create -n dce-detr python=3.11.9 -y
