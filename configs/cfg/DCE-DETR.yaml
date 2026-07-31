@@ -18,7 +18,7 @@ encoder:
   - [-1, TransformerEncoderBlock, [8, 1024, 0.1, "relu", 10000, False]] # 10-P4/16
 
 ################### GSPN ###################
-  - [[10, 8, 7], MSGA, [[3, 5, 7, 9]]] # 11-P4/16
+  - [[10, 8, 7], MSGA, [[3, 5, 7]]] # 11-P4/16
   - [-1, ConvNormLayer_fuse, [128, 3, 2]] # 12-P5/32
   - [11, nn.Upsample, [None, 2, "nearest"]] # 13-P3/8
 
@@ -28,7 +28,7 @@ encoder:
   - [[13, 7], Concat, []] # 16-P3/8
   - [-1, RepNCSPELAN4, [128, 256, 21, 2, False, 'silu']] # 17-P3/8
 
-  - [[15, 11, 17], MSGA, [[3, 5, 7, 9]]] # 18-P4/16
+  - [[15, 11, 17], MSGA, [[3, 5, 7]]] # 18-P4/16
   - [-1, ConvNormLayer_fuse, [256, 3, 2]] # 19-P5/32
   - [18, nn.Upsample, [None, 2, "nearest"]] # 20-P3/8
 
